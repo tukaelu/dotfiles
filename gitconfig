@@ -1,0 +1,54 @@
+# ----------------------------------------------------------------------------------------
+#    ________  ___  _________  ________  ________  ________   ________ ___  ________
+#   |\   ____\|\  \|\___   ___\\   ____\|\   __  \|\   ___  \|\  _____\\  \|\   ____\
+#   \ \  \___|\ \  \|___ \  \_\ \  \___|\ \  \|\  \ \  \\ \  \ \  \__/\ \  \ \  \___|
+#    \ \  \  __\ \  \   \ \  \ \ \  \    \ \  \\\  \ \  \\ \  \ \   __\\ \  \ \  \  ___
+#   __\ \  \|\  \ \  \   \ \  \ \ \  \____\ \  \\\  \ \  \\ \  \ \  \_| \ \  \ \  \|\  \
+#  |\__\ \_______\ \__\   \ \__\ \ \_______\ \_______\ \__\\ \__\ \__\   \ \__\ \_______\
+#  \|__|\|_______|\|__|    \|__|  \|_______|\|_______|\|__| \|__|\|__|    \|__|\|_______|
+#
+# ----------------------------------------------------------------------------------------
+
+[user]
+    name  = Tsukasa Nishiyama
+    email = me@tuka.io
+
+[core]
+    excludesfile = ~/.gitignore_global
+    quotepath    = false
+    editor       = nvim
+
+[push]
+    default = current
+
+[alias]
+    st  = status
+    bra = branch
+    co  = checkout
+    up  = pull --rebase
+    fe  = fetch --all --prune
+    l   = log --graph --pretty=format:\"%C(yellow)%h%Creset [%Cgreen%cn%Creset] %s %Cgreen(%an)%Creset %Cred%d%Creset\"
+    ll  = log --oneline --decorate --graph --all
+    lll = log --decorate --graph --all
+    ls  = log --graph --decorate --pretty=format:\"%ad [%Cgreen%cn%Creset] %h> %n %Cred%d%Creset %s %n\" --name-status
+    ld  = log --graph --decorate --pretty=format:\"%ad [%Cgreen%cn%Creset] <c:%h t:%t p:%p> %n %Cred%d%Creset %s %n\" --stat -p
+    lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    fs  = flow feature start
+
+[color]
+    ui     = auto
+    diff   = auto
+    status = auto
+    branch = auto
+
+[diff]
+    compactionHeuristic = true
+
+[github]
+    user = tukaelu
+
+[ghq]
+    user = tukaelu
+    root = ~/ghq
+
