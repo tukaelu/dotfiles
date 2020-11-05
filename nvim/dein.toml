@@ -1,0 +1,71 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['defx-git', 'defx-icons']
+hook_add = 'source ~/.config/nvim/config/defx.nvim'
+
+[[plugins]]
+repo ="kristijanhusak/defx-git"
+
+[[plugins]]
+repo ="kristijanhusak/defx-icons"
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = 'fzf#install()'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = 'source ~/.config/nvim/config/fzf.nvim'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['/vim-airline-themes']
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = 'source ~/.config/nvim/config/vim-airline.nvim'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+merge = 0
+hook_add = 'source ~/.config/nvim/config/coc.nvim'
+
+[[plugins]]
+repo = 'junegunn/seoul256.vim'
+hook_add = 'colorscheme seoul256'
+
+[[plugins]]
+repo = 't9md/vim-choosewin'
+hook_add = 'nmap  -  <Plug>(choosewin)'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'junegunn/gv.vim'
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+hook_add = 'let s:goyo_width = 150'
+

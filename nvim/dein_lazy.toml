@@ -1,0 +1,7 @@
+#[[plugins]]
+#repo = 'cespare/vim-toml'
+#on_ft = ['toml']
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
