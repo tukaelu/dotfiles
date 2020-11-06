@@ -112,6 +112,7 @@ set wildmode=list:longest
 syntax on                                    " 構文に応じたカラー表示にする
                                              " カーソル行をハイライトする
 "highlight CursorLine cterm=NONE ctermfg=blue ctermbg=black
+set nofoldenable                             " 自動折りたたみを無効にする
 
 " }}}
 " ============================================================================
