@@ -5,3 +5,7 @@
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
+
+[[plugins]]
+repo = 'mattn/vim-goimports'
+on_ft = ['go']
