@@ -67,5 +67,4 @@ repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'junegunn/goyo.vim'
-hook_add = 'let s:goyo_width = 150'
-
+hook_add = 'let s:goyo_width = 180'
