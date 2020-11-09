@@ -131,6 +131,6 @@ nnoremap <bar> <ESC>:vsp<CR>
 nnoremap T <ESC>:tabnew<CR>
 nnoremap < gT
 nnoremap > gt
-nnoremap <space>q <ESC>:q<CR>
+nnoremap ;q <ESC>:q<CR>
 
 " }}}
