@@ -32,8 +32,8 @@
     lll = log --decorate --graph --all
     ls  = log --graph --decorate --pretty=format:\"%ad [%Cgreen%cn%Creset] %h> %n %Cred%d%Creset %s %n\" --name-status
     ld  = log --graph --decorate --pretty=format:\"%ad [%Cgreen%cn%Creset] <c:%h t:%t p:%p> %n %Cred%d%Creset %s %n\" --stat -p
-    lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-    lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg  = log --graph --pretty=format:'%Cgreen%h %Creset%cd %C(bold blue)[%cn] %Creset%s%C(yellow)%d%C(reset)' --date=relative --decorate --all
+    sd  = "!git lg | fzf | awk '{print $2}' | xargs -I% git diff %^ %"
     fs  = flow feature start
 
 [color]
