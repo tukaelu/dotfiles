@@ -4,7 +4,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 depends = ['defx-git', 'defx-icons']
-hook_add = 'source ~/.config/nvim/config/defx.nvim'
+hook_add = 'source ~/.config/nvim/config/defx.vim'
 
 [[plugins]]
 repo ="kristijanhusak/defx-git"
@@ -23,7 +23,7 @@ merged = 0
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
-hook_add = 'source ~/.config/nvim/config/fzf.nvim'
+hook_add = 'source ~/.config/nvim/config/fzf.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -31,13 +31,13 @@ depends = ['/vim-airline-themes']
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-hook_add = 'source ~/.config/nvim/config/vim-airline.nvim'
+hook_add = 'source ~/.config/nvim/config/vim-airline.vim'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 merge = 0
-hook_add = 'source ~/.config/nvim/config/coc.nvim'
+hook_add = 'source ~/.config/nvim/config/coc.vim'
 
 [[plugins]]
 repo = 'junegunn/seoul256.vim'
