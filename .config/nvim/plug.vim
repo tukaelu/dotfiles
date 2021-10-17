@@ -31,6 +31,7 @@ Plug 'nvim-lua/completion-nvim'
 " Coding Support
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'editorconfig/editorconfig-vim'
 Plug 't9md/vim-choosewin'
 
 " Theme
