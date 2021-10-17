@@ -8,12 +8,6 @@ endif
 
 call plug#begin()
 
-" Theme
-Plug 'overcache/NeoSolarized'
-Plug 'junegunn/seoul256.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " Fuzzy Finder
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -35,10 +29,13 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-lua/completion-nvim'
 
 " Coding Support
-"Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-
-" Window Selector
 Plug 't9md/vim-choosewin'
+
+" Theme
+Plug 'hoob3rt/lualine.nvim'
+Plug 'overcache/NeoSolarized'
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
