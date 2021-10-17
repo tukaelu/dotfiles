@@ -2,3 +2,20 @@
 
 **Warning**: This is a personal setting, so please use it at your own risk!
 
+## Included  configuration
+
+- Vim (NeoVim)
+- Git
+- tmux
+
+## Requirements
+
+### Vim
+
+Requires Neovim (>= 0.5) - need a nightly build to get the most out of it
+
+- [junegunn/vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager.
+- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of common configurations for Neovim's built-in language server client.
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder.
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter configurations and abstraction layer for Neovim.
+
