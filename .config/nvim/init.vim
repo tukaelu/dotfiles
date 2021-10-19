@@ -1,4 +1,5 @@
 autocmd!
+scriptencoding utf-8
 
 runtime ./plug.vim
 runtime ./basics.vim

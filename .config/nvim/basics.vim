@@ -64,4 +64,8 @@ syntax on                                    " 構文に応じたカラー表示
 "highlight CursorLine cterm=NONE ctermfg=blue ctermbg=black
 set nofoldenable                             " 自動折りたたみを無効にする
 
+if has('nvim')
+  set inccommand=split                       " インクリメンタルな置換を有効にする
+endif
+
 " vim: set foldmethod=marker foldlevel=0:
