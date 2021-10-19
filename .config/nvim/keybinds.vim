@@ -16,3 +16,6 @@ nnoremap < gT
 nnoremap > gt
 nnoremap ;q <ESC>:q<CR>
 
+" omnifunc
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
