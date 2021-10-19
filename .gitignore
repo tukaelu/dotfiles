@@ -1,2 +1,9 @@
-/.config/
-!/.config/nvim/*
+*.o
+\#*#
+*#
+.#*
+.*~
+*~
+.DS_Store
+*.sw[po]
+
