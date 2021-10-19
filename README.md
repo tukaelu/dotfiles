@@ -36,3 +36,7 @@ Global installation of the Language Server for each development language is requ
 ```
 pip install powerline-status
 ```
+
+- [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+- [Tmux Resurrect](https://github.com/tmux-plugins/tmux-resurrect)
+- [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum/)
