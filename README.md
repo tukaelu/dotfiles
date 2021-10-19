@@ -19,3 +19,13 @@ Requires Neovim (>= 0.5) - need a nightly build to get the most out of it
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder.
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter configurations and abstraction layer for Neovim.
 
+### Language Servers
+
+Global installation of the Language Server for each development language is required
+
+- Go
+  - gopls
+- TypeScript
+  - typescript-language-server
+  - diagnostic-languageserver
+
