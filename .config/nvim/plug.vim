@@ -23,8 +23,13 @@ Plug 'tpope/vim-rhubarb'
 
 " LSP Support
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'folke/lsp-colors.nvim'
+Plug 'onsails/lspkind-nvim'
 
 " Coding Support
 Plug 'windwp/nvim-autopairs'

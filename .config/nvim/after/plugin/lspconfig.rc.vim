@@ -2,8 +2,14 @@ if !exists('g:lspconfig')
   finish
 endif
 
+set completeopt=menu,menuone,noinsert,noselect
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 lua << EOF
-vim.lsp.set_log_level("debug")
+--vim.lsp.set_log_level("debug")
 EOF
 
 lua << EOF
@@ -49,48 +55,100 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
-  require'completion'.on_attach(client, bufnr)
-
-  --protocol.SymbolKind = { }
-  protocol.CompletionItemKind = {
-    '', -- Text
-    '', -- Method
-    '', -- Function
-    '', -- Constructor
-    '', -- Field
-    '', -- Variable
-    '', -- Class
-    'ﰮ', -- Interface
-    '', -- Module
-    '', -- Property
-    '', -- Unit
-    '', -- Value
-    '', -- Enum
-    '', -- Keyword
-    '﬌', -- Snippet
-    '', -- Color
-    '', -- File
-    '', -- Reference
-    '', -- Folder
-    '', -- EnumMember
-    '', -- Constant
-    '', -- Struct
-    '', -- Event
-    'ﬦ', -- Operator
-    '', -- TypeParameter
-  }
 end
+
+-- Setup lspkind-nvim.
+local lspkind = require'lspkind'
+lspkind.init({
+  symbol_map = {
+    Text          = '', -- Text
+    Method        = '', -- Method
+    Function      = '', -- Function
+    Constructor   = '', -- Constructor
+    Field         = '', -- Field
+    Variable      = '', -- Variable
+    Class         = '', -- Class
+    Interface     = 'ﰮ', -- Interface
+    Module        = '', -- Module
+    Property      = '', -- Property
+    Unit          = '', -- Unit
+    Value         = '', -- Value
+    Enum          = '', -- Enum
+    Keyword       = '', -- Keyword
+    Snippet       = '﬌', -- Snippet
+    Color         = '', -- Color
+    File          = '', -- File
+    Reference     = '', -- Reference
+    Folder        = '', -- Folder
+    EnumMember    = '', -- EnumMember
+    Constant      = '', -- Constant
+    Struct        = '', -- Struct
+    Event         = '', -- Event
+    Operator      = 'ﬦ', -- Operator
+    TypeParameter = '', -- TypeParameter
+  },
+})
+
+-- Setup nvim-cmp.
+local cmp = require'cmp'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = {
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    })
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+  }, {
+    { name = 'buffer' },
+  }),
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = true,
+      maxwidth = 50,
+      menu = {
+        nvim_lsp = "[LSP]",
+        vsnip    = "[Snip]",
+        look     = "[Dict]",
+        buffer   = "[Buffer]",
+      }
+    })
+  },
+})
+
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(protocol.make_client_capabilities())
+
 
 nvim_lsp['gopls'].setup {
   on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 nvim_lsp['tsserver'].setup {
   on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 nvim_lsp['diagnosticls'].setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
   init_options = {
     linters = {
