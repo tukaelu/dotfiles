@@ -1,10 +1,10 @@
 if !exists('g:loaded_telescope') | finish | endif
 
-nnoremap <silent> ;f <cmd>Telescope find_files<cr>
-nnoremap <silent> ;F <cmd>Telescope find_files hidden=true<cr>
-nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
-nnoremap <silent> ;b <cmd>Telescope buffers<cr>
-nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+nnoremap <silent> sl <cmd>Telescope find_files<cr>
+nnoremap <silent> sL <cmd>Telescope find_files hidden=true<cr>
+nnoremap <silent> sr <cmd>Telescope live_grep<cr>
+nnoremap <silent> sb <cmd>Telescope buffers<cr>
+nnoremap <silent> s; <cmd>Telescope help_tags<cr>
 
 lua << EOF
 local actions = require('telescope.actions')
