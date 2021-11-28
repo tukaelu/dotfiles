@@ -18,6 +18,7 @@
   br  = branch
   bra = branch
   ba  = branch -a
+  bd  = branch -d
   bm  = branch --merged
   bn  = branch --no-merged
   co  = checkout
@@ -31,7 +32,16 @@
   re  = rebase
   ri  = rebase -i
   st  = status
+  sw  = switch
+  re  = restore
   up  = pull --rebase
+  # short
+  b   = branch
+  d   = diff
+  l   = ld
+  p   = pull --rebase
+  r   = restore
+  s   = status
 
 [color]
   ui     = auto
