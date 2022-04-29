@@ -6,7 +6,6 @@ pgrep -x fcitx > /dev/null || fcitx &
 
 # If there are multiple displays, configure for each display.
 # Check the display name with the xrandr command.
-#bspc monitor -d I II III IV V VI VII VIII IX X
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_width         2
