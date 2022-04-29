@@ -30,3 +30,5 @@ bspc config presel_feedback_color         "#5e81ac"
 #### polybar ####
 /home/tuka/.config/polybar/launch.sh
 
+#### background image ####
+/usr/bin/feh --randomize --bg-fill /usr/share/backgrounds/wallpapers > /dev/null 2>&1
