@@ -4,15 +4,24 @@
 
 # terminal emulator
 super + Return
+	alacritty
+
+super + shift + Return
 	terminator
 
 # program launcher
 super + @space
+    rofi -combi-modi window,drun,ssh -theme solarized -font "cica 12" -show combi -icon-theme "Papirus" -show-icons
+super + shift + @space
 	rofi -show combi
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# google chrome
+super + b
+	google-chrome-stable
 
 #
 # bspwm hotkeys
