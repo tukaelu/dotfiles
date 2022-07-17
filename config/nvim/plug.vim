@@ -37,6 +37,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 't9md/vim-choosewin'
 Plug 'folke/trouble.nvim'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Theme
 Plug 'hoob3rt/lualine.nvim'
