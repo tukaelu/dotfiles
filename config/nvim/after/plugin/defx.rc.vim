@@ -5,7 +5,14 @@ call defx#custom#column('icon', {
       \ 'root_icon': ' ',
       \ })
 
-nnoremap <silent>sf :<C-u>Defx -listed -resume
+call defx#custom#option('_', {
+      \ 'winwidth': 40,
+      \ 'split': 'vertical',
+      \ 'direction': 'topleft',
+      \ 'buffer_name': 'exlorer',
+      \ })
+
+nnoremap <silent>sf :<C-u>Defx -listed -resume -toggle
       \ -columns=indent:mark:icon:icons:filename:git:size
       \ -buffer-name=tab`tabpagenr()`
       \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
@@ -13,7 +20,8 @@ nnoremap <silent>sf :<C-u>Defx -listed -resume
 autocmd FileType defx call s:defx_my_settings()
   function! s:defx_my_settings() abort
     " Define mappings
-    nnoremap <silent><buffer><expr> <CR> defx#do_action('open')
+    nnoremap <silent><buffer><expr> <CR> defx#do_action('drop')
+    nnoremap <silent><buffer><expr> t defx#do_action('open', 'tabnew')
     nnoremap <silent><buffer><expr> c defx#do_action('copy')
     nnoremap <silent><buffer><expr> m defx#do_action('move')
     nnoremap <silent><buffer><expr> p defx#do_action('paste')
