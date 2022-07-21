@@ -13,7 +13,7 @@ font:
   bold:
     family: Cica
     style: Bold
-  size: 8
+  size: 9
   offset:
     y: 1
   use_thin_strokes: true
