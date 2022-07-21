@@ -9,6 +9,9 @@ super + Return
 super + shift + Return
 	terminator
 
+super + f
+	bspc node focused -t "~floating"
+
 # program launcher
 super + @space
     rofi -combi-modi window,drun,ssh -theme solarized -font "cica 12" -show combi -icon-theme "Papirus" -show-icons
