@@ -19,3 +19,20 @@ nnoremap ;q <ESC>:q<CR>
 " omnifunc
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
+
+
+" open filer
+nnoremap <silent> sf :<C-u>Defx -listed -resume -toggle
+      \ -columns=indent:mark:icon:icons:filename:git:size
+      \ -buffer-name=tab`tabpagenr()`
+      \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
+
+nnoremap <silent> sl <cmd>Telescope find_files<cr>
+nnoremap <silent> sL <cmd>Telescope find_files hidden=true<cr>
+nnoremap <silent> sr <cmd>Telescope live_grep<cr>
+nnoremap <silent> sb <cmd>Telescope buffers<cr>
+nnoremap <silent> s; <cmd>Telescope help_tags<cr>
+
+nnoremap <silent> sg <cmd>IndentGuidesToggle<cr>
+
+nnoremap <silent> gb <cmd>GBrowse<cr>
