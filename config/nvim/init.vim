@@ -5,6 +5,7 @@ runtime ./plug.vim
 runtime ./basics.vim
 runtime ./keybinds.vim
 runtime ./filetypes.vim
+runtime ./term.vim
 
 " true color
 if exists("&termguicolors") && exists("&winblend")
