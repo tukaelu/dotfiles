@@ -35,4 +35,4 @@ nnoremap <silent> s; <cmd>Telescope help_tags<cr>
 
 nnoremap <silent> sg <cmd>IndentGuidesToggle<cr>
 
-nnoremap <silent> gb <cmd>GBrowse<cr>
+nnoremap <silent> gb <cmd>:'<,'>GBrowse<cr>
