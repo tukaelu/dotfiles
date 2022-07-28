@@ -2,6 +2,9 @@
 "  KeyBinding
 " ============================================================================
 
+" Reload
+nnoremap <C-1> :source $MYVIMRC<cr>
+
 " Save
 inoremap <C-s> <C-O>:update<cr>
 nnoremap <C-s> :update<cr>
@@ -33,6 +36,17 @@ nnoremap <silent> sr <cmd>Telescope live_grep<cr>
 nnoremap <silent> sb <cmd>Telescope buffers<cr>
 nnoremap <silent> s; <cmd>Telescope help_tags<cr>
 
-nnoremap <silent> sg <cmd>IndentGuidesToggle<cr>
+nnoremap <silent> ;g <cmd>'<,'>GBrowse<cr>
+nnoremap <silent> ;b <cmd>Git blame<cr>
+nnoremap <silent> ;d <cmd>Gdiffsplit<cr>
+nnoremap <silent> ;v <cmd>IndentGuidesToggle<cr>
 
-nnoremap <silent> gb <cmd>:'<,'>GBrowse<cr>
+nnoremap <silent> ;T <cmd>TroubleToggle<cr>
+nnoremap <silent> ;tw <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <silent> ;td <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <silent> ;tq <cmd>TroubleToggle quickfix<cr>
+nnoremap <silent> ;tl <cmd>TroubleToggle loclist<cr>
+
+nnoremap <silent> ;r <cmd>TroubleToggle lsp_references<cr>
+nnoremap <silent> ;d <cmd>TroubleToggle lsp_definitions<cr>
+nnoremap <silent> ;t <cmd>TroubleToggle lsp_type_definitions<cr>
