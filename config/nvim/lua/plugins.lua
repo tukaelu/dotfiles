@@ -28,6 +28,7 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'williamboman/mason.nvim' -- LSP package manager
   use 'williamboman/mason-lspconfig.nvim'
+  use 'L3MON4D3/LuaSnip'
 
   -- Coding support
   use {
