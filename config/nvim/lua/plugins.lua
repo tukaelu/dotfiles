@@ -41,6 +41,7 @@ packer.startup(function(use)
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
   })
+  use 'terrortylor/nvim-comment'
 
   -- Git support
   use 'lewis6991/gitsigns.nvim'
