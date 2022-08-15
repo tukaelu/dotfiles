@@ -1,6 +1,6 @@
 function fzf_select_history
-  history | fzf | read cmd
-  if [ -n "$cmd"]
+  history | fzf --layout=reverse | read cmd
+  if [ -n "$cmd" ]
     commandline $cmd
   else
     commandline ''
