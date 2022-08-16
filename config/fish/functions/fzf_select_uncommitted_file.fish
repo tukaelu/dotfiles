@@ -4,7 +4,7 @@ function fzf_select_uncommitted_file
     return 0
   end
 
-  set selected_file (git status --short | awk '{print $2}' | fzf --layout=reverse)
+  set selected_file (git status --short | awk '{print $2}' | fzf --layout=reverse --multi | xargs -o)
 
   if [ -n "$selected_file" ]
     commandline -a $selected_file
