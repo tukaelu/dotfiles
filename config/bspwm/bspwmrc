@@ -14,7 +14,6 @@ bspc config borderless_monocle    true
 bspc config gapless_monocle       true
 bspc config focus_follows_pointer true
 
-bspc rule -a Google-chrome desktop='^2'
 bspc rule -a Screenkey manage=off
 
 #### BSPWM coloring ####
@@ -29,4 +28,4 @@ bspc config presel_feedback_color         "#5e81ac"
 pgrep -x picom > /dev/null || picom -b
 pgrep -x fcitx > /dev/null || fcitx &
 
-/usr/bin/feh --randomize --bg-fill /home/tuka/Pictures/wallpapers > /dev/null 2>&1
+/usr/bin/feh --randomize --bg-fill /home/tuka/Wallpaper > /dev/null 2>&1
