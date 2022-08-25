@@ -28,7 +28,7 @@ telescope.setup {
       hijack_netrw = true,
       mappings = {
         ['i'] = {
-          ['<C-w'] = function() vim.cmd('normal vbd') end,
+          ['<C-w>'] = function() vim.cmd('normal vbd') end,
         },
         ['n'] = {
           ['N'] = fb_actions.create,
@@ -51,7 +51,7 @@ vim.keymap.set('n', ';f', function()
   })
 end)
 
-vim.keymap.set('n', ';s', function()
+vim.keymap.set('n', ';g', function()
   builtin.live_grep()
 end)
 
@@ -71,7 +71,7 @@ vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
 end)
 
-vim.keymap.set('n', 'sf', function()
+vim.keymap.set('n', ';s', function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),

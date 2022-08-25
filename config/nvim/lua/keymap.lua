@@ -31,17 +31,17 @@ keymap.set('i', '<C-Space>', '<C-x><C-o>') -- Omnifunc
 
 -- Telescope
 -- keymap.set('n', ';f', builtin.find_files)
--- keymap.set('n', ';s', builtin.live_grep)
+-- keymap.set('n', ';g', builtin.live_grep)
 -- keymap.set('n', ';b', builtin.buffers)
 -- keymap.set('n', ';t', builtin.help_tags)
 -- keymap.set('n', ';;', builtin.resume)
 -- keymap.set('n', ';e', builtin.diagnostics)
--- keymap.set('n', 'sf', telescope.extensions.file_browser.file_browser)
+-- keymap.set('n', ';s', telescope.extensions.file_browser.file_browser)
 
 -- LSP Saga
 -- keymap.set('n', '<C-j>', Lspsaga diagnostic_jump_next)
 -- keymap.set('n', 'K', Lspsaga hover_doc)
--- keymap.set('n', 'gd', Lspsaga lsp_finder)
+-- keymap.set('n', 'gl', Lspsaga lsp_finder)
 -- keymap.set('n', 'gp', Lspsaga preview_definition)
 -- keymap.set('n', 'gr', Lspsaga rename)
 -- keymap.set('i', '<C-k>', Lspsaga signature_help)
