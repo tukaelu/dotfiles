@@ -30,7 +30,7 @@ packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
   use 'L3MON4D3/LuaSnip'
 
-  -- Coding support
+  -- Working support
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -42,6 +42,7 @@ packer.startup(function(use)
     run = function() vim.fn['mkdp#util#install']() end,
   })
   use 'terrortylor/nvim-comment'
+  use 'akinsho/toggleterm.nvim'
 
   -- Git support
   use 'lewis6991/gitsigns.nvim'

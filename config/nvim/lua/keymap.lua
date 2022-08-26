@@ -38,6 +38,9 @@ keymap.set('i', '<C-Space>', '<C-x><C-o>') -- Omnifunc
 -- keymap.set('n', ';e', builtin.diagnostics)
 -- keymap.set('n', ';s', telescope.extensions.file_browser.file_browser)
 
+-- Toggleterm
+-- keymap.set('n', ';t', ToggleTerm)
+
 -- LSP Saga
 -- keymap.set('n', '<C-j>', Lspsaga diagnostic_jump_next)
 -- keymap.set('n', 'K', Lspsaga hover_doc)
