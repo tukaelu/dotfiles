@@ -49,10 +49,7 @@ packer.startup(function(use)
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
   -- Themes & Icons
-  use { -- Colorschema
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
+  use 'EdenEast/nightfox.nvim'
   use 'kyazdani42/nvim-web-devicons' -- File icons
 
 end)
