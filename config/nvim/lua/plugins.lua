@@ -63,5 +63,6 @@ packer.startup(function(use)
   -- Git support
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+  use 'akinsho/git-conflict.nvim' -- support for conflict resolution
 
 end)
