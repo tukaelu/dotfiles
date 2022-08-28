@@ -20,12 +20,11 @@ bufferline.setup {
     },
     background = {
       fg = '#657b83',
-      bg = '#002b36'
+      bg = '#002b36',
     },
     buffer_selected = {
-      fg = '#fdf6e3',
-      underline = true,
-      undercurl = true,
+      fg = '#657b83',
+      bg = '#002b36',
       italic = true
     },
     fill = {
