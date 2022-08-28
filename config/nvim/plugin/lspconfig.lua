@@ -74,6 +74,13 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities
 }
 
+nvim_lsp.terraformls.setup {
+  on_attach = on_attach,
+  filetypes = { 'tf', 'terraform' },
+  cmd = { 'terraform-ls', 'serve' },
+  capabilities = capabilities
+}
+
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
   settings = {
