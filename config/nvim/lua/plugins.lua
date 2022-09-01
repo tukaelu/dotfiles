@@ -16,7 +16,7 @@ packer.startup(function(use)
   use 'nvim-lua/popup.nvim'
 
   -- Themes
-  use 'EdenEast/nightfox.nvim' -- Colorscheme
+  use 'shaunsingh/nord.nvim' -- Colorscheme
   use 'nvim-lualine/lualine.nvim' -- Status line
   use 'akinsho/nvim-bufferline.lua' -- Buffer line
   use 'kyazdani42/nvim-web-devicons' -- File icons

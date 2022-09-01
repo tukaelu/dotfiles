@@ -1,14 +1,13 @@
-
-local colors = require('nightfox.palette.nightfox')
+local colors = require('nord.named_colors')
 
 require('scrollbar').setup({
   marks = {
-    Search = { color = colors.palette.orange.base },
-    Error = { color = colors.palette.red.base },
-    Warn = { color = colors.palette.yellow.base },
-    Info = { color = colors.palette.blue.base },
-    Hint = { color = colors.palette.green.base },
-    Misc = { color = colors.palette.pink.base }
+    Search = { color = colors.orange },
+    Error = { color = colors.red },
+    Warn = { color = colors.yellow },
+    Info = { color = colors.blue },
+    Hint = { color = colors.green },
+    Misc = { color = colors.purple }
   }
 })
 
