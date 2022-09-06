@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
-local scheme = wezterm.get_builtin_color_schemes()["nord"]
+
+local is_mac = wezterm.target_triple:find 'darwin' -- x86_64-apple-darwin
+local is_linux = wezterm.target_triple:find 'linux' -- x86_64-unknown-linux-gnu
 
 -- Functions
 
@@ -8,12 +10,10 @@ local function font_with_fallback(expected, attrs)
   local families = expected
   local fallbacks = { 'Noto Sans JP' }
 
-  if wezterm.target_triple:find 'darwin' then -- x86_64-apple-darwin
+  if is_mac then
     table.insert(fallbacks, 'DroidSansMono Nerd Font')
     table.insert(fallbacks, 'ヒラギノ丸ゴ ProN')
-  end
-
-  if wezterm.target_triple:find 'linux' then -- x86_64-unknown-linux-gnu
+  elseif is_linux then
     table.insert(fallbacks, 'Ubuntu Monospace')
     table.insert(fallbacks, 'Doroid Sans')
   end
@@ -23,6 +23,16 @@ local function font_with_fallback(expected, attrs)
   end
 
   return wezterm.font_with_fallback(families, attrs)
+end
+
+local function font_size()
+  Size = 18
+  if is_mac then
+    Size = 16
+  elseif is_linux then
+    Size = 20
+  end
+  return Size
 end
 
 return {
@@ -43,11 +53,11 @@ return {
 
   -- colorscheme
   color_scheme = 'nord',
-  window_background_opacity = 0.85,
+  window_background_opacity = 0.75,
 
   -- font
   font = font_with_fallback { 'Cica' },
-  font_size = 20,
+  font_size = font_size(),
 
   -- tab
   tab_bar_at_bottom = true,
@@ -56,7 +66,7 @@ return {
 
   -- keybindings
   disable_default_key_bindings = true,
-  leader = { key = 'q', mods = 'CTRL', timeout_milliseconds = 2000 },
+  leader = { key = 't', mods = 'CTRL', timeout_milliseconds = 2000 },
   keys = {
     -- { key = '[', mods = 'LEADER', action = act({ CopyTo = 'Clipboard' }) },
     { key = '[', mods = 'LEADER', action = act('ActivateCopyMode') },
