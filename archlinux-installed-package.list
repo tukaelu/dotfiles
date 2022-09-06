@@ -7,7 +7,6 @@ aws-cli
 base
 binutils
 bison
-bspwm
 containerd
 cronie
 dmidecode
@@ -57,15 +56,12 @@ pacman
 patch
 picom
 pkgconf
-polybar
 pulseaudio
 python-pynvim
 ranger
 ripgrep
-rofi
 sed
 sudo
-sxhkd
 terminator
 texinfo
 tlp
@@ -74,6 +70,7 @@ tree
 unzip
 vlc
 wezterm
+wget
 which
 wpa_supplicant
 xf86-video-intel
@@ -81,6 +78,7 @@ xorg-server
 xorg-xinit
 xorg-xinput
 xsel
+yajl
 yubikey-manager
 zsh
 zsh-completions
