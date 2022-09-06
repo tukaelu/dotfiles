@@ -43,6 +43,9 @@ if test -f LOCAL_CONF
 end
 
 
-# disable touchpad middle click
-xinput set-button-map "Synaptics TM3288-011" 1 0 3 4 5 6 7
+switch (uname)
+  case Linux
+    # disable touchpad middle click
+    xinput set-button-map "Synaptics TM3288-011" 1 0 3 4 5 6 7
+end
 
