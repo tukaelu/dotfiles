@@ -49,3 +49,9 @@ switch (uname)
     xinput set-button-map "Synaptics TM3288-011" 1 0 3 4 5 6 7
 end
 
+# Start X at login
+if status --is-login
+  if test -z "$DISPLAY" -a $XDG_VTNR = 1
+    exec startx -- -keeptty
+  end
+end
