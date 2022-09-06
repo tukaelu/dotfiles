@@ -30,28 +30,23 @@ end
 # anyenv
 status --is-interactive; and source (anyenv init - | psub)
 
-# os
+# preparation by OS
 switch (uname)
-  case Linux
-    set LOCAL_CONF (dirname (status --current-filename))/config-linux.fish
   case Darwin
     set LOCAL_CONF (dirname (status --current-filename))/config-macos.fish
+  case Linux
+    # start X at login
+    if status --is-login
+      and test -z "$DISPLAY" -a $XDG_VTNR = 1
+        exec startx -- -keeptty
+    end
+
+    # disable touchpad middle click
+    xinput set-button-map "Synaptics TM3288-011" 1 0 3 4 5 6 7
+
+    set LOCAL_CONF (dirname (status --current-filename))/config-linux.fish
 end
 
 if test -f LOCAL_CONF
   source $LOCAL_CONF
-end
-
-
-switch (uname)
-  case Linux
-    # disable touchpad middle click
-    xinput set-button-map "Synaptics TM3288-011" 1 0 3 4 5 6 7
-end
-
-# Start X at login
-if status --is-login
-  if test -z "$DISPLAY" -a $XDG_VTNR = 1
-    exec startx -- -keeptty
-  end
 end
