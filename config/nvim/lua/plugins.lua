@@ -59,6 +59,7 @@ packer.startup(function(use)
   use 'akinsho/toggleterm.nvim' -- terminal
   use 'petertriho/nvim-scrollbar' -- extensible scrollbar
   use 'kevinhwang91/nvim-hlslens' -- support for search visivility
+  use 'norcalli/nvim-colorizer.lua' -- color highlighter
 
   -- Git support
   use 'lewis6991/gitsigns.nvim'
