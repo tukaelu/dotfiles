@@ -1,6 +1,11 @@
 
 function fzf_connect_nordvpn -d 'Select a destination to connect to Nordvpn'
 
+  if not type -q nordvpn
+    echo "nordvpn cli is not installed"
+    return
+  end
+
   set selected_country ( \
     nordvpn countries |\
     tail -n +2 |\
