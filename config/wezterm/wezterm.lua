@@ -4,16 +4,20 @@ local act = wezterm.action
 local is_mac = wezterm.target_triple:find 'darwin' -- x86_64-apple-darwin
 local is_linux = wezterm.target_triple:find 'linux' -- x86_64-unknown-linux-gnu
 
+local default_window_background_opacity = 0.75
+
 -- Functions
 
-local function font_with_fallback(expected, attrs)
-  local families = expected
+local function font_with_fallback()
+  local families = {}
+  local attrs = {}
   local fallbacks = { 'Noto Sans JP' }
 
   if is_mac then
-    table.insert(fallbacks, 'DroidSansMono Nerd Font')
+    table.insert(families, 'DroidSansMono Nerd Font')
     table.insert(fallbacks, 'ヒラギノ丸ゴ ProN')
   elseif is_linux then
+    table.insert(families, 'Cica')
     table.insert(fallbacks, 'Ubuntu Monospace')
     table.insert(fallbacks, 'Doroid Sans')
   end
@@ -35,6 +39,16 @@ local function font_size()
   return Size
 end
 
+wezterm.on('toggle-opacity', function(window, pane)
+  local overrides = window:get_config_overrides() or {}
+  if not overrides.window_background_opacity then
+    overrides.window_background_opacity = default_window_background_opacity
+  else
+    overrides.window_background_opacity = nil
+  end
+  window:set_config_overrides(overrides)
+end)
+
 return {
 
   front_end = 'Software',
@@ -53,10 +67,10 @@ return {
 
   -- colorscheme
   color_scheme = 'nord',
-  window_background_opacity = 0.75,
+  window_background_opacity = default_window_background_opacity,
 
   -- font
-  font = font_with_fallback { 'Cica' },
+  font = font_with_fallback(),
   font_size = font_size(),
 
   -- tab
@@ -84,6 +98,7 @@ return {
     { key = '9', mods = 'LEADER', action = act({ ActivateTab = 8 }) },
     { key = 'n', mods = 'LEADER', action = act({ ActivateTabRelative = 1 }) },
     { key = 'p', mods = 'LEADER', action = act({ ActivateTabRelative = -1 }) },
+    { key = 'o', mods = 'LEADER', action = act.EmitEvent 'toggle-opacity' },
   },
 
   key_tables = {
