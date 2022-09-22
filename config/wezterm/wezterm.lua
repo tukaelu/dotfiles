@@ -83,6 +83,7 @@ return {
   leader = { key = 't', mods = 'CTRL', timeout_milliseconds = 2000 },
   keys = {
     -- { key = '[', mods = 'LEADER', action = act({ CopyTo = 'Clipboard' }) },
+    { key = 'c', mods = 'LEADER', action = act.Copy },
     { key = '[', mods = 'LEADER', action = act('ActivateCopyMode') },
     { key = ']', mods = 'LEADER', action = act({ PasteFrom = 'Clipboard' }) },
     { key = 't', mods = 'LEADER', action = act({ SpawnTab = 'CurrentPaneDomain' }) },
