@@ -47,6 +47,10 @@ switch (uname)
     set LOCAL_CONF (dirname (status --current-filename))/config-linux.fish
 end
 
-if test -f LOCAL_CONF
+if test -f $LOCAL_CONF
   source $LOCAL_CONF
+end
+
+if type -q neofetch
+  neofetch
 end
