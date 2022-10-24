@@ -30,13 +30,13 @@ keymap.set('n', '<bar>', ':vsp<CR>', { silent = true }) -- Split window vertical
 keymap.set('i', '<C-Space>', '<C-x><C-o>') -- Omnifunc
 
 -- Telescope
--- keymap.set('n', ';s', builtin.find_files)
+-- keymap.set('n', ';f', builtin.find_files)
 -- keymap.set('n', ';g', builtin.live_grep)
 -- keymap.set('n', ';b', builtin.buffers)
 -- keymap.set('n', ';t', builtin.help_tags)
 -- keymap.set('n', ';;', builtin.resume)
--- keymap.set('n', ';e', builtin.diagnostics)
--- keymap.set('n', ';f', telescope.extensions.file_browser.file_browser)
+-- keymap.set('n', ';d', builtin.diagnostics)
+-- keymap.set('n', ';e', telescope.extensions.file_browser.file_browser)
 
 -- Toggleterm
 -- keymap.set('n', ';t', ToggleTerm)
