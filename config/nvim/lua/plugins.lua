@@ -16,7 +16,12 @@ packer.startup(function(use)
   use 'nvim-lua/popup.nvim'
 
   -- Themes
-  use 'shaunsingh/nord.nvim' -- Colorscheme
+  use({
+    -- FIXME avoid "Invalid character in group name"
+    -- https://github.com/shaunsingh/nord.nvim/issues/113#issuecomment-1285315967
+    'shaunsingh/nord.nvim', -- Colorscheme
+    commit = "78f5f001709b5b321a35dcdc44549ef93185e024",
+  })
   use 'nvim-lualine/lualine.nvim' -- Status line
   use 'akinsho/nvim-bufferline.lua' -- Buffer line
   use 'kyazdani42/nvim-web-devicons' -- File icons
