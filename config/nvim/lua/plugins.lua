@@ -43,6 +43,7 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline' -- cmdline completion
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
+  use 'saadparwaiz1/cmp_luasnip' -- luasnip completion
 
   -- Snippets
   use 'L3MON4D3/LuaSnip'
