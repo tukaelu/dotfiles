@@ -1,22 +1,27 @@
-require('base')
-require('highlights')
-require('keymap')
-require('plugins')
+require('tuka.plugins-setup')
+require('tuka.core.options')
+require('tuka.core.keymaps')
+require('tuka.core.colorscheme')
 
-local has = function(x)
-  return vim.fn.has(x) == 1
-end
-
-local is_mac = has 'macunix'
-local is_linux = has 'unix'
-local is_win = has 'win32'
-
-if is_mac then
-  require('macos')
-end
-if is_linux then
-  require('linux')
-end
-if is_win then
-  require('windows')
-end
+-- plugins
+require('tuka.plugins.telescope')
+require('tuka.plugins.lualine')
+require('tuka.plugins.treesitter')
+require('tuka.plugins.bufferline')
+require('tuka.plugins.git')
+require('tuka.plugins.gitsigns')
+require('tuka.plugins.git-conflict')
+require('tuka.plugins.mason')
+require('tuka.plugins.lsp.lspconfig')
+require('tuka.plugins.lsp.lspsaga')
+require('tuka.plugins.lsp.lspkind')
+require('tuka.plugins.lsp.null-ls')
+require('tuka.plugins.cmp')
+require('tuka.plugins.luasnip')
+require('tuka.plugins.toggleterm')
+require('tuka.plugins.colorizer')
+require('tuka.plugins.comment')
+require('tuka.plugins.autopairs')
+require('tuka.plugins.ts-autotag')
+require('tuka.plugins.scrollbar')
+require('tuka.plugins.web-devicons')
