@@ -7,6 +7,16 @@ keymap.set('i', '<leader>jk', '<ESC>') -- Exit insert mode
 keymap.set('n', '<leader>q', ':q<CR>') -- Quit
 keymap.set('n', '<leader>nh', ':nohl<CR>') -- clear search highlights
 
+-- Explorer
+keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+
+-- Telescope
+keymap.set('n', '<leader>f', '<Cmd>Telescope find_files<CR>')
+keymap.set('n', '<leader>g', '<Cmd>Telescope live_grep<CR>')
+keymap.set('n', '<leader>b', '<Cmd>Telescope buffers<CR>')
+keymap.set('n', '<leader>h', '<Cmd>Telescope help_tags<CR>')
+keymap.set('n', '<leader>r', '<Cmd>Telescope resume<CR>')
+
 -- Editor
 keymap.set('n', '<C-a>', 'gg<S-v>G') -- All selections
 keymap.set('i', '<C-s>', '<C-o>:update<CR>', { silent = true }) -- Save (in insert mode)
@@ -44,13 +54,3 @@ keymap.set('n', 'gl', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
 keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-
--- Telescope
--- keymap.set('n', ';f', builtin.find_files({}))
--- keymap.set('n', ';g', builtin.live_grep())
--- keymap.set('n', ';b', builtin.buffers())
--- keymap.set('n', ';h', builtin.help_tags())
--- keymap.set('n', ';;', builtin.resume())
--- keymap.set('n', ';d', builtin.diagnostics())
--- keymap.set('n', ';e', telescope.extensions.file_browser.file_browser({}))
-

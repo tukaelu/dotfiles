@@ -47,6 +47,9 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
 
+  -- File Explorer
+  use 'nvim-tree/nvim-tree.lua'
+
   -- LSPs
   use 'neovim/nvim-lspconfig' -- LSP
   use 'glepnir/lspsaga.nvim' -- LSP UIs
