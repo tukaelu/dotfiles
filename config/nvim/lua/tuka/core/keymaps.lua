@@ -8,10 +8,11 @@ keymap.set('n', '<leader>q', ':q<CR>') -- Quit
 keymap.set('n', '<leader>nh', ':nohl<CR>') -- clear search highlights
 
 -- Explorer
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+keymap.set('n', '<leader>e', '<Cmd>Telescope file_browser<CR>')
 
 -- Telescope
-keymap.set('n', '<leader>f', '<Cmd>Telescope find_files<CR>')
+keymap.set('n', '<leader>f', '<Cmd>Telescope find_files hidden=true<CR>')
+keymap.set('n', '<leader>F', '<Cmd>Telescope find_files hidden=true no_ignore=true<CR>')
 keymap.set('n', '<leader>g', '<Cmd>Telescope live_grep<CR>')
 keymap.set('n', '<leader>b', '<Cmd>Telescope buffers<CR>')
 keymap.set('n', '<leader>h', '<Cmd>Telescope help_tags<CR>')
@@ -21,26 +22,27 @@ keymap.set('n', '<leader>r', '<Cmd>Telescope resume<CR>')
 keymap.set('n', '<C-a>', 'gg<S-v>G') -- All selections
 keymap.set('i', '<C-s>', '<C-o>:update<CR>', { silent = true }) -- Save (in insert mode)
 keymap.set('n', '<C-s>', ':update<CR>', { silent = true }) -- Save
+keymap.set('i', '<C-Space>', '<C-x><C-o>') -- Omnifunc
 
 -- increment / decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
 
 -- Tab / Window
-keymap.set('n', 'T', ':tabedit<CR>', { silent = true }) -- Open new tab
-keymap.set('n', '<', 'gT', { silent = true }) -- Move tab next
-keymap.set('n', '>', 'gt', { silent = true }) -- Move tab prev
-keymap.set('n', 'wh', '<C-w>h') -- Move tab left
-keymap.set('n', 'w<left>', '<C-w>h')
-keymap.set('n', 'wk', '<C-w>k') -- Move tab up
-keymap.set('n', 'w<up>', '<C-w>k')
-keymap.set('n', 'wj', '<C-w>j') -- Move tab down
-keymap.set('n', 'w<down>', '<C-w>j')
-keymap.set('n', 'wl', '<C-w>l') -- Move tab right
-keymap.set('n', 'w<right>', '<C-w>l')
+keymap.set('n', 'T', ':$tabnew<CR>', { silent = true }) -- Open new tab
+keymap.set('n', '<', ':-tabnext<CR>', { silent = true }) -- Move tab next
+keymap.set('n', '>', ':+tabnext<CR>', { silent = true }) -- Move tab prev
+
 keymap.set('n', '_', ':sp<CR>', { silent = true }) -- Split window horizontally
 keymap.set('n', '<bar>', ':vsp<CR>', { silent = true }) -- Split window vertically
-keymap.set('i', '<C-Space>', '<C-x><C-o>') -- Omnifunc
+keymap.set('n', 'wh', '<C-w>h') -- Move window left
+keymap.set('n', 'w<left>', '<C-w>h')
+keymap.set('n', 'wk', '<C-w>k') -- Move window up
+keymap.set('n', 'w<up>', '<C-w>k')
+keymap.set('n', 'wj', '<C-w>j') -- Move window down
+keymap.set('n', 'w<down>', '<C-w>j')
+keymap.set('n', 'wl', '<C-w>l') -- Move window right
+keymap.set('n', 'w<right>', '<C-w>l')
 
 -- Bufferline
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
