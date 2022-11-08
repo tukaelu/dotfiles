@@ -15,18 +15,30 @@ keymap.set('n', '<leader>f', '<Cmd>Telescope find_files hidden=true<CR>')
 keymap.set('n', '<leader>F', '<Cmd>Telescope find_files hidden=true no_ignore=true<CR>')
 keymap.set('n', '<leader>g', '<Cmd>Telescope live_grep<CR>')
 keymap.set('n', '<leader>b', '<Cmd>Telescope buffers<CR>')
-keymap.set('n', '<leader>h', '<Cmd>Telescope help_tags<CR>')
-keymap.set('n', '<leader>r', '<Cmd>Telescope resume<CR>')
+keymap.set('n', '<leader>?', '<Cmd>Telescope help_tags<CR>')
+keymap.set('n', '<leader>;', '<Cmd>Telescope resume<CR>')
+
+-- Git
+keymap.set('n', '<leader>h', '<Cmd>Git blame<CR>')
+keymap.set('n', '<leader>d', '<Cmd>Gdiffsplit<CR>')
+keymap.set('n', '<leader>o', "<Cmd>'<,'>GBrowse<CR>")
+
+-- LspSaga
+local opts = { noremap = true, silent = true }
+keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+keymap.set('n', '<leader>l', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+keymap.set('n', '<leader>p', '<Cmd>Lspsaga peek_definition<CR>', opts)
+keymap.set('n', '<leader>r', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- Editor
 keymap.set('n', '<C-a>', 'gg<S-v>G') -- All selections
 keymap.set('i', '<C-s>', '<C-o>:update<CR>', { silent = true }) -- Save (in insert mode)
 keymap.set('n', '<C-s>', ':update<CR>', { silent = true }) -- Save
 keymap.set('i', '<C-Space>', '<C-x><C-o>') -- Omnifunc
-
--- increment / decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
+keymap.set('n', '+', '<C-a>') -- increment number
+keymap.set('n', '-', '<C-x>') -- decrement number
 
 -- Tab / Window
 keymap.set('n', 'T', ':$tabnew<CR>', { silent = true }) -- Open new tab
@@ -47,12 +59,3 @@ keymap.set('n', 'w<right>', '<C-w>l')
 -- Bufferline
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
-
--- LspSaga
-local opts = { noremap = true, silent = true }
-keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-keymap.set('n', 'gl', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
-keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)

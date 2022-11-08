@@ -46,6 +46,7 @@ packer.startup(function(use)
   -- Fuzzy finder
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- LSPs
   use 'neovim/nvim-lspconfig' -- LSP
@@ -80,14 +81,13 @@ packer.startup(function(use)
     run = function() vim.fn['mkdp#util#install']() end,
   })
   use 'terrortylor/nvim-comment' -- toggle comments
-  use 'akinsho/toggleterm.nvim' -- terminal
   use 'petertriho/nvim-scrollbar' -- extensible scrollbar
   use 'kevinhwang91/nvim-hlslens' -- support for search visivility
   use 'norcalli/nvim-colorizer.lua' -- color highlighter
 
   -- Git support
   use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' -- For git blame & browse
+  use 'tpope/vim-fugitive' -- For git blame & browse
   use 'akinsho/git-conflict.nvim' -- support for conflict resolution
 
   if packer_bootstrap then
