@@ -9,7 +9,7 @@ local default_window_background_opacity = 0.75
 -- Functions
 
 local function font_with_fallback()
-  local families = {}
+  local families = { 'Cica' }
   local attrs = {}
   local fallbacks = { 'Noto Sans JP' }
 
@@ -17,7 +17,6 @@ local function font_with_fallback()
     table.insert(families, 'DroidSansMono Nerd Font')
     table.insert(fallbacks, 'ヒラギノ丸ゴ ProN')
   elseif is_linux then
-    table.insert(families, 'Cica')
     table.insert(fallbacks, 'Ubuntu Monospace')
     table.insert(fallbacks, 'Doroid Sans')
   end
@@ -32,7 +31,7 @@ end
 local function font_size()
   Size = 18
   if is_mac then
-    Size = 16
+    Size = 20
   elseif is_linux then
     Size = 20
   end
