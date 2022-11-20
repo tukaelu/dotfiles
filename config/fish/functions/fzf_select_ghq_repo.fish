@@ -2,7 +2,8 @@ function fzf_select_ghq_repo -d 'Navigate to the selected local repository'
   set local_repos_root (ghq root)
   set selected_repo ( \
     ghq list | \
-    fzf \
+    fzf-tmux \
+      -p \
       --query="$LBUFFER" \
       --layout=reverse \
       --header='Select local repository:' \

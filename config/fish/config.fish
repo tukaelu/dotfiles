@@ -9,8 +9,9 @@ set -gx FZF_DEFAULT_OPTS '
 --bind=ctrl-u:page-up
 --bind=ctrl-d:page-down
 --bind=ctrl-z:toggle-all
---color fg:#d8dee9,bg:#3b4252,hl:#ebcb8b,fg+:#d8dee9,bg+:#4c566a,hl+:#ebcb8b
---color info:#88c0d0,prompt:#a3be8c,spinner:#88c0d0,pointer:#5e81ac,marker:#bf616a
+--color=spinner:#F8BD96,hl:#F28FAD
+--color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96
+--color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD
 --height 40%
 --border
 '
