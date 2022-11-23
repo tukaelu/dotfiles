@@ -25,6 +25,7 @@ if type -q exa
 end
 
 if type -q tmux
+  alias ts "fzf_tmux_session"
   alias ide "tmux split-window -h -p 30; and tmux split-window -v -p 50"
 end
 
@@ -52,6 +53,6 @@ if test -f $LOCAL_CONF
   source $LOCAL_CONF
 end
 
-if type -q neofetch
-  neofetch
-end
+#if type -q neofetch
+#  neofetch
+#end

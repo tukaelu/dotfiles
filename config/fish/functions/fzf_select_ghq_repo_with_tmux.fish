@@ -12,8 +12,11 @@ function fzf_select_ghq_repo_with_tmux -d 'Navigate to the selected local reposi
   if [ -n "$selected_repo" ]
     if [ -n "$TMUX" ]
       set repo_name (basename $selected_repo)
-      tmux new-session -d -c "$local_repos_root/$selected_repo" -s $repo_name 2> /dev/null
-      tmux switch-client -t $repo_name 2> /dev/null
+      tmux has $repo_name > /dev/null 2>&1
+      if [ $status -ne 0 ]
+        tmux new-session -d -c "$local_repos_root/$selected_repo" -s $repo_name > /dev/null 2>&1
+      end
+      tmux switch-client -t $repo_name > /dev/null 2>&1
     else
       builtin cd "$local_repos_root/$selected_repo"
       echo "$local_repos_root/$selected_repo"

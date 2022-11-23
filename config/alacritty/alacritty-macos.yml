@@ -8,8 +8,8 @@ shell:
   program: /usr/local/bin/fish
   args:
     - -l
-    - -c
-    - "/usr/local/bin/tmux a -t (hostname -s) > /dev/null 2>&1 || /usr/local/bin/tmux new-session -s (hostname -s)"
+      #    - -c
+      #    - "/usr/local/bin/tmux a -t (hostname -s) > /dev/null 2>&1 || /usr/local/bin/tmux new-session -s (hostname -s)"
 
 window:
   opacity: 0.8
