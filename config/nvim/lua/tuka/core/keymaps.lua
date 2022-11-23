@@ -29,7 +29,7 @@ keymap('n', '<leader>o', "<Cmd>'<,'>GBrowse<CR>", opts)
 keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
 keymap('n', '<C-l>', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 keymap('n', '<C-d>', '<Cmd>Lspsaga peek_definition<CR>', opts)
-keymap('n', '<C-r>', '<Cmd>Lspsaga rename<CR>', opts)
+keymap('n', '<C-_>', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- Editor
 keymap('n', '<C-a>', 'gg<S-v>G', opts) -- All selections
