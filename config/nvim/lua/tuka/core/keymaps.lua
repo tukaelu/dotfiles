@@ -22,7 +22,7 @@ keymap('n', '<leader>;', '<Cmd>Telescope resume<CR>', opts)
 
 -- Git
 keymap('n', '<leader>b', '<Cmd>Git blame<CR>', opts)
-keymap('n', '<leader>d', '<Cmd>Gdiffsplit<CR>', opts)
+keymap('n', '<leader>d', '<Cmd>Gvdiffsplit<CR>', opts)
 keymap('n', '<leader>o', "<Cmd>'<,'>GBrowse<CR>", opts)
 
 -- LspSaga

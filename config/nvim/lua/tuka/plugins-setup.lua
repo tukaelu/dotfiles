@@ -88,6 +88,7 @@ packer.startup(function(use)
   -- Git support
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive' -- For git blame & browse
+  use 'tpope/vim-rhubarb'
   use 'akinsho/git-conflict.nvim' -- support for conflict resolution
 
   if packer_bootstrap then
