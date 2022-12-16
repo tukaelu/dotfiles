@@ -31,7 +31,7 @@ opt.cmdheight = 1
 opt.laststatus = 2
 
 -- line wrapping
-opt.wrap = false
+opt.wrap = true
 opt.showbreak = '››'
 opt.whichwrap = 'b,s,h,l,<,>,[,]'
 
