@@ -25,7 +25,7 @@ if type -q exa
 end
 
 if type -q tmux
-  alias ts "fzf_tmux_session"
+  alias tl "fzf_tmux_session"
   alias ide "tmux split-window -h -p 30; and tmux split-window -v -p 50"
 end
 
