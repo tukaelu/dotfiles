@@ -16,6 +16,9 @@ window:
   padding:
     x: 14
     y: 14
+  dimensions:
+    columns: 140
+    lines: 35
   dynamic_padding: false
 
 scrolling:
@@ -29,7 +32,7 @@ font:
   bold:
     family: Cica
     style: Bold
-  size: 9
+  size: 16
 
 # Kanagawa Alacritty Colors
 # https://github.com/rebelot/kanagawa.nvim/blob/master/extras/alacritty_kanagawa.yml

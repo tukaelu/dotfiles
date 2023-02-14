@@ -39,7 +39,7 @@ switch (uname)
   case Linux
     # start X at login
     if status --is-login
-      and test -z "$DISPLAY" -a $XDG_VTNR = 1
+      and test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         exec startx -- -keeptty
     end
 
