@@ -27,6 +27,7 @@ keymap('n', '<leader>o', "<Cmd>'<,'>GBrowse<CR>", opts)
 
 -- LspSaga
 keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 keymap('n', '<C-l>', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 keymap('n', '<C-d>', '<Cmd>Lspsaga peek_definition<CR>', opts)
 keymap('n', '<C-_>', '<Cmd>Lspsaga rename<CR>', opts)
