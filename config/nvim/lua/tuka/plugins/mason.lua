@@ -10,7 +10,6 @@ lspconfig.setup {
     'diagnosticls',
     'gopls',
     'golangci_lint_ls',
-    'sumneko_lua'
   },
   automatic_installation = true,
 }
