@@ -13,6 +13,9 @@ shell:
 
 window:
   opacity: 0.8
+  dimensions:
+    columns: 140
+    lines: 40
   padding:
     x: 14
     y: 14
@@ -29,7 +32,7 @@ font:
   bold:
     family: Cica
     style: Bold
-  size: 9
+  size: 8.5
 
 # Kanagawa Alacritty Colors
 # https://github.com/rebelot/kanagawa.nvim/blob/master/extras/alacritty_kanagawa.yml
