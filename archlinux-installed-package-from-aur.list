@@ -1,14 +1,4 @@
-anyenv
-geteltorito
-ghq-bin
-google-chrome
-nordvpn-bin
-polybar-dwm-module
-simple-mtpfs
-slack-desktop
+fingerprint-gui
+ghq
 ttf-cica
-ttf-google-fonts-git
 ttf-symbola
-udisks
-ulauncher
-yay
