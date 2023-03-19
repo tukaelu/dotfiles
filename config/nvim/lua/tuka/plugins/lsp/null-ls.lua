@@ -3,17 +3,21 @@ if (not status) then return end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local completion = null_ls.builtins.completion
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   souces = {
+    formatting.gofmt,
     formatting.prettierd,
+    diagnostics.yamllint,
     diagnostics.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file('.eslintrc.js')
       end,
     }),
+    completion.spell,
   },
   on_attach = function(current_client, bufnr)
     if current_client.supports_method("textDocument/formatting") then
