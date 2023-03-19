@@ -87,6 +87,15 @@ packer.startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'akinsho/git-conflict.nvim' -- support for conflict resolution
 
+  -- Startup greeter
+  use({
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require 'alpha'.setup(require 'alpha.themes.startify'.config)
+    end
+  })
+
   if packer_bootstrap then
     require('packer').sync()
   end
