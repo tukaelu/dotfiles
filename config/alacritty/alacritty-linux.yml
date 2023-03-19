@@ -9,7 +9,7 @@ shell:
   args:
     - -l
     - -c
-    - "/usr/bin/tmux a -t (hostnamectl hostname) > /dev/null 2>&1 || /usr/bin/tmux new-session -s (hostnamectl hostname)"
+    - "/usr/bin/tmux a > /dev/null 2>&1 || /usr/bin/tmux new-session"
 
 window:
   opacity: 0.8
