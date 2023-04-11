@@ -31,32 +31,36 @@ return {
         show_buffer_close_icons = false,
         show_close_icon = false,
         color_icons = true,
+        diagnostics = 'nvim_lsp',
       },
-      highlights = {
-        separator = {
-          fg = '#2E3440',
-          bg = '#2E3440',
-        },
-        separator_selected = {
-          fg = '#2E3440',
-          bg = '#4C566A',
-        },
-        background = {
-          fg = '#81A1C1',
-          bg = '#2E3440',
-        },
-        buffer_selected = {
-          fg = '#ECEFF4',
-          bg = '#4C566A',
-          italic = true
-        },
-        modified = {
-          bg = '#2E3440',
-        },
-        modified_selected = {
-          bg = '#4C566A',
-        },
-      },
+      -- highlights = {
+      --   fill = {
+      --     bg = '#3c3836' -- bg1
+      --   },
+      --   separator = {
+      --     fg = '#3c3836',
+      --     bg = '#2E3440',
+      --   },
+      --   separator_selected = {
+      --     fg = '#3c3836',
+      --     bg = '#4C566A',
+      --   },
+        -- background = {
+        --   fg = '#81A1C1',
+        --   bg = '#2E3440',
+        -- },
+        -- buffer_selected = {
+        --   fg = '#ECEFF4',
+        --   bg = '#4C566A',
+        --   italic = true
+        -- },
+        -- modified = {
+        --   bg = '#2E3440',
+        -- },
+        -- modified_selected = {
+        --   bg = '#4C566A',
+        -- },
+      -- },
     }
   },
 

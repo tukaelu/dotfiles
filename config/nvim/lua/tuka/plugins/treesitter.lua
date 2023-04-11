@@ -15,6 +15,7 @@ return {
       'yaml',
       'toml',
       'lua',
+      'terraform',
       'markdown',
       'markdown_inline',
     },

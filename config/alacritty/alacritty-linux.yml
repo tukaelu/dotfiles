@@ -8,8 +8,8 @@ shell:
   program: /usr/bin/fish
   args:
     - -l
-    - -c
-    - "/usr/bin/tmux a > /dev/null 2>&1 || /usr/bin/tmux new-session"
+    # - -c
+    # - "/usr/bin/tmux a > /dev/null 2>&1 || /usr/bin/tmux new-session"
 
 window:
   opacity: 0.8
@@ -32,42 +32,7 @@ font:
   bold:
     family: Cica
     style: Bold
-  size: 8.5
-
-# Kanagawa Alacritty Colors
-# https://github.com/rebelot/kanagawa.nvim/blob/master/extras/alacritty_kanagawa.yml
-kanagawa: &kanagawa
-  primary:
-    background: '0x1f1f28'
-    foreground: '0xdcd7ba'
-
-  normal:
-    black:   '0x090618'
-    red:     '0xc34043'
-    green:   '0x76946a'
-    yellow:  '0xc0a36e'
-    blue:    '0x7e9cd8'
-    magenta: '0x957fb8'
-    cyan:    '0x6a9589'
-    white:   '0xc8c093'
-
-  bright:
-    black:   '0x727169'
-    red:     '0xe82424'
-    green:   '0x98bb6c'
-    yellow:  '0xe6c384'
-    blue:    '0x7fb4ca'
-    magenta: '0x938aa9'
-    cyan:    '0x7aa89f'
-    white:   '0xdcd7ba'
-
-  selection:
-    background: '0x2d4f67'
-    foreground: '0xc8c093'
-
-  indexed_colors:
-    - { index: 16, color: '0xffa066' }
-    - { index: 17, color: '0xff5d62' }
+  size: 9
 
 nord: &nord
   primary:
@@ -118,4 +83,106 @@ nord: &nord
     cyan: '#6d96a5'
     white: '#aeb3bb'
 
-colors: *kanagawa
+# Kanagawa Alacritty Colors
+# https://github.com/rebelot/kanagawa.nvim/blob/master/extras/alacritty_kanagawa.yml
+kanagawa: &kanagawa
+  primary:
+    background: '0x1f1f28'
+    foreground: '0xdcd7ba'
+  normal:
+    black:   '0x090618'
+    red:     '0xc34043'
+    green:   '0x76946a'
+    yellow:  '0xc0a36e'
+    blue:    '0x7e9cd8'
+    magenta: '0x957fb8'
+    cyan:    '0x6a9589'
+    white:   '0xc8c093'
+  bright:
+    black:   '0x727169'
+    red:     '0xe82424'
+    green:   '0x98bb6c'
+    yellow:  '0xe6c384'
+    blue:    '0x7fb4ca'
+    magenta: '0x938aa9'
+    cyan:    '0x7aa89f'
+    white:   '0xdcd7ba'
+  selection:
+    background: '0x2d4f67'
+    foreground: '0xc8c093'
+  indexed_colors:
+    - { index: 16, color: '0xffa066' }
+    - { index: 17, color: '0xff5d62' }
+
+# Gruvbox Colors
+# https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f
+gruvbox_material_hard_dark: &gruvbox_material_hard_dark
+  primary:
+    background: '0x1d2021'
+    foreground: '0xd4be98'
+  normal:
+    black:   '0x32302f'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
+  bright:
+    black:   '0x32302f'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
+gruvbox_material_medium_dark: &gruvbox_material_medium_dark
+  primary:
+    background: '0x282828'
+    foreground: '0xd4be98'
+  normal:
+    black:   '0x3c3836'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
+  bright:
+    black:   '0x3c3836'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
+gruvbox_material_soft_dark: &gruvbox_material_soft_dark
+  primary:
+    background: '0x32302f'
+    foreground: '0xd4be98'
+  normal:
+    black:   '0x45403d'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
+  bright:
+    black:   '0x45403d'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
+
+# colors: *nord
+# colors: *kanagawa
+colors: *gruvbox_material_hard_dark

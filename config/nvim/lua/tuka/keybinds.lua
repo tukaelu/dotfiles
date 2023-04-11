@@ -15,8 +15,8 @@ bind('n', '<C-s>', '<Cmd>update<CR>')                 -- Save
 bind('n', '<leader>q', '<Cmd>q<CR>')                  -- Quit
 bind('n', '<leader>Q', '<Cmd>qa<CR>')                 -- Quit all
 bind('n', '<leader>t', '<Cmd>$tabnew<CR>', { desc = 'Open new tab' })
-bind('n', '<', '<Cmd>-tabnext<CR>')                   -- Move tab next
-bind('n', '>', '<Cmd>+tabnext<CR>')                   -- Move tab prev
+bind('n', '>', '<Cmd>+tabnext<CR>')                   -- Move tab next
+bind('n', '<', '<Cmd>-tabnext<CR>')                   -- Move tab prev
 bind('n', '<C-a>', 'gg<S-v>G')                        -- All selections
 bind('n', '<leader>sn', '<Cmd>nohl<CR>', { desc = 'Clear search highlights' })
 bind('n', '_', '<Cmd>sp<CR>')                         -- Split window horizontally

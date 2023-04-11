@@ -3,6 +3,9 @@ return {
     'ellisonleao/gruvbox.nvim',
     event = "VeryLazy",
     opts = {
+      overrides = {
+        CursorLine = { bg = '#7c6f64' }, -- bg4
+      },
       transparent_mode = true,
     },
   },
