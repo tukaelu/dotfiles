@@ -77,11 +77,16 @@ return {
     opts = {
       ui = {
         border = 'rounded',
-        winblend = 100,
+        winblend = 20,
+      },
+      finder = {
+        keys = {
+          expand_or_jump = '<CR>'
+        }
       },
       diagnostic = {
-        insert_winblend = 100,
-      }
+        insert_winblend = 0,
+      },
     }
   },
 
