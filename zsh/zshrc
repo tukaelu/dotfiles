@@ -1,0 +1,99 @@
+bindkey -e
+
+# ------------------------
+# Install Zim
+#  see. https://zimfw.sh/
+# ------------------------
+ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  if (( ${+commands[curl]} )); then
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  else
+    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  fi
+fi
+
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+[[ ~/.zimrc -nt ~/.zim/init.zsh ]] && source ~/.zim/zimfw.zsh init -q
+
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+# ------------------------
+
+# set environments
+WORDCHARS=${WORDCHARS//[\/]}
+SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# aliases
+alias vi=`which nvim`
+
+# set options
+setopt clobber                # Permit overwrite by redirection(> & >>) (Use >! and >>! to bypass.)
+setopt correct                # Check spell command
+setopt correct_all            # Check spell all
+setopt multios                # Case of multi redirection and pipe, use 'tee' and 'cat', if needed
+                              #   e.g.)
+                              #     ~$ < file1  # cat
+                              #     ~$ < file1 < file2        # cat 2 files
+                              #     ~$ < file1 > file3        # copy file1 to file3
+                              #     ~$ < file1 > file3 | cat  # copy and put to stdout
+                              #     ~$ cat file1 > file3 > /dev/stdin  # tee
+setopt pushd_minus            # Replace 'cd -' with 'cd +'
+setopt pushd_ignore_dups      # Ignore duplicates to add to pushd
+setopt pushd_to_home          # If pushd no arg, pushd $HOME
+setopt brace_ccl              # Deploy {a-c} -> a b c
+setopt hist_ignore_all_dups   # Delete an old recorded event if a new event is a duplicate.
+setopt hist_save_no_dups
+setopt hist_ignore_dups       # Do not record an event that was just recorded again.
+setopt hist_expire_dups_first # Expire a duplicate event first when trimming history.
+setopt hist_find_no_dups      # Do not display a previously found event.
+setopt share_history          # Shere history
+setopt hist_no_store          # Remove comannd of 'hostory' or 'fc -l' from history list
+setopt hist_no_functions      # Remove functions from history list
+setopt extended_history       # Record start and end time to history file
+setopt hist_ignore_space      # Ignore the beginning space command to history file
+setopt append_history         # Append to history file
+setopt hist_verify            # Edit history file during call history before executing
+setopt bang_hist              # Enable history system like a Bash
+setopt auto_remove_slash      # Automatically delete slash complemented by supplemented by inserting a space.
+setopt no_beep                # No Beep
+setopt no_list_beep
+setopt no_hist_beep
+setopt equals                 # Expand '=command' as path of command
+                              #   e.g.) '=ls' -> '/bin/ls'
+setopt no_flow_control        # Do not use Ctrl-s/Ctrl-q as flow control
+setopt path_dirs              # Look for a sub-directory in $PATH when the slash is included in the command
+setopt print_exit_value       # Show exit status if it's except zero.
+setopt print_eight_bit        # Enable 8bit
+setopt rm_star_wait           # Confirm when executing 'rm *'
+setopt notify                 # Let me know immediately when terminating job
+setopt long_list_jobs         # Show process ID
+setopt auto_resume            # Resume when executing the same name command as suspended process name
+setopt no_case_glob           # Ignore case when glob
+setopt mark_dirs              # If the path is directory, add '/' to path tail when generating path by glob
+
+# set styles
+zstyle ':zim:git'        aliases-prefix 'g'
+zstyle ':zim:input'      double-dot-expand yes
+zstyle ':zim:termtitle'  format '%1~'
+zstyle ':zim:prompt-pwd' git-root yes
+
+# fuzzy finder
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# functions
+[[ -d ~/.config/zsh/functions ]] && source ~/.config/zsh/functions/load.zsh
+
+# bindkeys
+bindkey $terminfo[kcuu1] history-substring-search-up
+bindkey $terminfo[kcud1] history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+bindkey "^S" fzf-file-widget
+bindkey '^T' transpose-chars
+bindkey '^]' ghq-fzf

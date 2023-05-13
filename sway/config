@@ -10,6 +10,7 @@ set $mod Mod1
 # Monitor
 output eDP-1 {
   res 2560x1440
+  pos 0 0
   scale 1
 }
 
@@ -34,6 +35,11 @@ input type:pointer {
   scroll_factor  0.5
 }
 
+
+set $laptop "eDP-1"
+bindswitch --reload --locked lid:on  output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
 # ----- #
 # Theme #
 # ----- #
@@ -44,7 +50,7 @@ gaps inner 15
 default_border pixel 3
 
 # Colors
-set $bg             #a48abfcc
+set $bg             #64b4f277
 set $bg-inactive    #120e1200
 set $bg-urgent      #d9236588
 set $text-light     #f2d8e988
@@ -102,9 +108,11 @@ set $right  l
 bindsym $mod+r reload
 
 # launch
-bindsym $mod+Return exec alacritty
 bindsym $mod+Space  exec wofi
-bindsym $mod+e      exec dolphin
+bindsym $mod+Return exec alacritty
+bindsym $mod+e      exec alacritty --class ranger -T ranger -e ranger
+bindsym $mod+x      exec dolphin
+bindsym $mod+b      exec com.google.Chrome
 
 # login session
 bindsym $mod+Ctrl+e exec LANG=en.US_UTF-8 wlogout
@@ -187,9 +195,30 @@ floating_modifier $mod normal
 # Window configuration #
 # -------------------- #
 
+# always floating window
+for_window [app_id="bubble"]            floating enable
+for_window [app_id="confirm"]           floating enable
+for_window [app_id="dialog"]            floating enable
+for_window [app_id="download"]          floating enable
+for_window [app_id="error"]             floating enable
+for_window [app_id="fcitx5-config"]     floating enable
+for_window [app_id="file_progress"]     floating enable
+for_window [app_id="imv"]               floating enable
+for_window [app_id="kdesystemsettings"] floating enable
+for_window [app_id="menu"]              floating enable
+for_window [app_id="notification"]      floating enable
+for_window [app_id="pop-up"]            floating enable
+for_window [app_id="task_dialog"]       floating enable
+
+for_window [instance="ranger"] floating enable
+for_window [instance="ranger"] resize set width  1280
+for_window [instance="ranger"] resize set height  640
+
 for_window [instance="google-chrome" title="DevTools.*"] floating enable
 for_window [instance="google-chrome" title="DevTools.*"] resize set width  1280
 for_window [instance="google-chrome" title="DevTools.*"] resize set height 640
+
+for_window [instance="discord"] floating enable
 
 for_window [instance="vlc"] floating enable
 for_window [instance="vlc"] resize set width  1280

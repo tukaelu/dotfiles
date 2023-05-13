@@ -4,7 +4,7 @@
 
 ## Included  configuration
 
-- Vim (NeoVim)
+- NeoVim
 - Git
 - tmux
 
@@ -40,3 +40,10 @@ pip install powerline-status
 - [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 - [Tmux Resurrect](https://github.com/tmux-plugins/tmux-resurrect)
 - [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum/)
+
+## Updates
+
+```
+pacman -Qqn > archlinux-installed-package.list
+pacman -Qqem > archlinux-installed-package-from-aur.list
+```

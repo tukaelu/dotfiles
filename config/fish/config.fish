@@ -30,7 +30,10 @@ if type -q tmux
 end
 
 # anyenv
-status --is-interactive; and source (anyenv init - | psub)
+set -Ux fish_user_paths $HOME/.anyenv/bin $fish_user_paths
+if type -q anyenv
+  status --is-interactive; and source (anyenv init - | psub)
+end
 
 # preparation by OS
 switch (uname)
@@ -39,12 +42,12 @@ switch (uname)
   case Linux
     # start X at login
     if status --is-login
-      and test -z "$DISPLAY" -a $XDG_VTNR = 1
+      and test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         exec startx -- -keeptty
     end
 
-    # disable touchpad middle click
-    xinput set-button-map "Synaptics TM3288-011" 1 0 3 4 5 6 7
+#    # disable touchpad middle click
+#    xinput set-button-map "Synaptics TM3288-011" 1 0 3 4 5 6 7
 
     set LOCAL_CONF (dirname (status --current-filename))/config-linux.fish
 end
