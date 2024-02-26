@@ -1,15 +1,12 @@
-#
 live_config_reload: true
 
 env:
   TERM: xterm-256color
 
 shell:
-  program: /usr/local/bin/fish
+  program: /bin/zsh
   args:
     - -l
-      #    - -c
-      #    - "/usr/local/bin/tmux a -t (hostname -s) > /dev/null 2>&1 || /usr/local/bin/tmux new-session -s (hostname -s)"
 
 window:
   opacity: 0.8
@@ -20,7 +17,7 @@ window:
     columns: 160
     lines: 40
   dynamic_padding: false
-  decorations: buttonless # for macOS
+  # decorations: buttonless # for macOS
 
 scrolling:
   history: 10000
