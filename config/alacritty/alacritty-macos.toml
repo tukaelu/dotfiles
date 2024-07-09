@@ -40,14 +40,14 @@ foreground = "0xc8c093"
 TERM = "xterm-256color"
 
 [font]
-size = 20
+size = 16
 
 [font.bold]
-family = "Cica"
+family = "PlemolJP35 Console NF"
 style = "Bold"
 
 [font.normal]
-family = "Cica"
+family = "PlemolJP35 Console NF"
 style = "Regular"
 
 # [[kanagawa.indexed_colors]]
@@ -151,7 +151,7 @@ program = "/bin/zsh"
 
 [window]
 dynamic_padding = false
-opacity = 0.8
+opacity = 0.975
 
 [window.dimensions]
 columns = 160
