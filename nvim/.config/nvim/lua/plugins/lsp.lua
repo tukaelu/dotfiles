@@ -6,6 +6,7 @@ return {
         "gofumpt",
         "goimports",
         "golangci-lint",
+        "golangci-lint-langserver",
         "gomodifytags",
         "gopls",
         "stylua",
@@ -41,6 +42,7 @@ return {
             debounce_text_changes = 150,
           },
         },
+        golangci_lint_ls = {},
         lua_ls = {
           settings = {
             Lua = {
