@@ -1,36 +1,36 @@
 live_config_reload = true
 
 [[colors.indexed_colors]]
-color = "0xffa066"
+color = "0xb6927b"
 index = 16
 
 [[colors.indexed_colors]]
-color = "0xff5d62"
+color = "0xb98d7b"
 index = 17
 
 [colors.bright]
-black = "0x727169"
+black = "0xa6a69c"
 blue = "0x7fb4ca"
 cyan = "0x7aa89f"
-green = "0x98bb6c"
+green = "0x87a987"
 magenta = "0x938aa9"
-red = "0xe82424"
-white = "0xdcd7ba"
+red = "0xe46876"
+white = "0xc5c9c5"
 yellow = "0xe6c384"
 
 [colors.normal]
-black = "0x090618"
-blue = "0x7e9cd8"
-cyan = "0x6a9589"
-green = "0x76946a"
-magenta = "0x957fb8"
-red = "0xc34043"
+black = "0x0d0c0c"
+blue = "0x8ba4b0"
+cyan = "0x8ea4a2"
+green = "0x8a9a7b"
+magenta = "0xa292a3"
+red = "0xc4746e"
 white = "0xc8c093"
-yellow = "0xc0a36e"
+yellow = "0xc4b28a"
 
 [colors.primary]
-background = "0x1f1f28"
-foreground = "0xdcd7ba"
+background = "0x181616"
+foreground = "0xc5c9c5"
 
 [colors.selection]
 background = "0x2d4f67"
@@ -50,97 +50,6 @@ style = "Bold"
 family = "PlemolJP35 Console NF"
 style = "Regular"
 
-# [[kanagawa.indexed_colors]]
-# color = "0xffa066"
-# index = 16
-#
-# [[kanagawa.indexed_colors]]
-# color = "0xff5d62"
-# index = 17
-#
-# [kanagawa.bright]
-# black = "0x727169"
-# blue = "0x7fb4ca"
-# cyan = "0x7aa89f"
-# green = "0x98bb6c"
-# magenta = "0x938aa9"
-# red = "0xe82424"
-# white = "0xdcd7ba"
-# yellow = "0xe6c384"
-#
-# [kanagawa.normal]
-# black = "0x090618"
-# blue = "0x7e9cd8"
-# cyan = "0x6a9589"
-# green = "0x76946a"
-# magenta = "0x957fb8"
-# red = "0xc34043"
-# white = "0xc8c093"
-# yellow = "0xc0a36e"
-#
-# [kanagawa.primary]
-# background = "0x1f1f28"
-# foreground = "0xdcd7ba"
-#
-# [kanagawa.selection]
-# background = "0x2d4f67"
-# foreground = "0xc8c093"
-
-# [nord.bright]
-# black = "#4c566a"
-# blue = "#81a1c1"
-# cyan = "#8fbcbb"
-# green = "#a3be8c"
-# magenta = "#b48ead"
-# red = "#bf616a"
-# white = "#eceff4"
-# yellow = "#ebcb8b"
-#
-# [nord.cursor]
-# cursor = "#d8dee9"
-# text = "#2e3440"
-#
-# [nord.dim]
-# black = "#373e4d"
-# blue = "#68809a"
-# cyan = "#6d96a5"
-# green = "#809575"
-# magenta = "#8c738c"
-# red = "#94545d"
-# white = "#aeb3bb"
-# yellow = "#b29e75"
-#
-# [nord.normal]
-# black = "#3b4252"
-# blue = "#81a1c1"
-# cyan = "#88c0d0"
-# green = "#a3be8c"
-# magenta = "#b48ead"
-# red = "#bf616a"
-# white = "#e5e9f0"
-# yellow = "#ebcb8b"
-#
-# [nord.primary]
-# background = "#2e3440"
-# dim_foreground = "#a5abb6"
-# foreground = "#d8dee9"
-#
-# [nord.search.hooter_bar]
-# background = "#434c5e"
-# foreground = "#d8dee9"
-#
-# [nord.search.matches]
-# background = "#88c0d0"
-# foreground = "CellBackground"
-#
-# [nord.selection]
-# background = "#4c566a"
-# text = "CellForeground"
-#
-# [nord.vi_mode_cursor]
-# cursor = "#d8dee9"
-# text = "#2e3440"
-
 [scrolling]
 history = 10000
 multiplier = 3
@@ -151,7 +60,7 @@ program = "/bin/zsh"
 
 [window]
 dynamic_padding = false
-opacity = 0.975
+opacity = 0.825
 
 [window.dimensions]
 columns = 160
