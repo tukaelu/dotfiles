@@ -138,9 +138,26 @@ return {
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "luasnip" },
+          { name = "copilot" },
         }),
       })
     end,
+  },
+
+  -- copilot
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = { enabled = true },
+      panel = { enabled = false },
+      filetypes = {
+        go = true,
+        markdown = true,
+        help = true,
+      },
+    },
   },
 
   -- autopairs
