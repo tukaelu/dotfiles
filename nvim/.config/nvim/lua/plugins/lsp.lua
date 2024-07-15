@@ -20,13 +20,34 @@ return {
     "neovim/nvim-lspconfig",
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = {
+      keys[#keys + 1] = { -- definition
         "gd",
         function()
           require("telescope.builtin").lsp_definitions({ reuse_win = false })
         end,
         desc = "Goto definition",
         has = "definition",
+      }
+      keys[#keys + 1] = { -- references
+        "gr",
+        function()
+          require("telescope.builtin").lsp_references({ reuse_win = false })
+        end,
+        desc = "References",
+      }
+      keys[#keys + 1] = { -- implementation
+        "gI",
+        function()
+          require("telescope.builtin").lsp_implementations({ reuse_win = false })
+        end,
+        desc = "Goto Implementation",
+      }
+      keys[#keys + 1] = { -- type definition
+        "gy",
+        function()
+          require("telescope.builtin").lsp_type_definitions({ reuse_win = false })
+        end,
+        desc = "Goto T[y]pe Definition",
       }
     end,
     opts = {

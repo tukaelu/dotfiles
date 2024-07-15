@@ -16,3 +16,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.conceallevel = 0
   end,
 })
+
+-- Indent
+local ft = require("config.indent")
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function(args)
+    ft[args.match]()
+  end,
+})
