@@ -25,3 +25,10 @@ vim.api.nvim_create_autocmd("FileType", {
     ft[args.match]()
   end,
 })
+
+-- Associate file extensions with file types
+vim.filetype.add({
+  extension = {
+    mdx = "markdown",
+  },
+})
