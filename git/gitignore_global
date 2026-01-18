@@ -1,9 +1,4 @@
-*.o
-\#*#
-*#
-.#*
-.*~
-*~
 .DS_Store
-*.sw[po]
 
+**/.claude/settings.local.json
+**/CLAUDE.local.md

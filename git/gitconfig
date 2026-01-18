@@ -41,6 +41,7 @@
   res = restore
   st  = status
   sw  = switch
+  swc = switch -c
   up  = pull --rebase
   # short
   a = ad
@@ -61,7 +62,7 @@
 
 [ghq]
   user = tukaelu
-  root = ~/Developments/repos
+  root = ~/Repos
 
 [web]
   browser = open

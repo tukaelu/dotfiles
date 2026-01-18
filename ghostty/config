@@ -1,0 +1,142 @@
+# ============================================================================
+# Ghostty Terminal Configuration
+# ============================================================================
+# Main configuration file for Ghostty terminal emulator.
+# This file loads additional configuration files organized by functionality.
+#
+# Official Documentation: https://ghostty.org/docs/config/reference
+# List available themes: ghostty +list-themes
+# Show default config: ghostty +show-config --default --docs
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Font Configuration
+# ----------------------------------------------------------------------------
+# Controls font family, size, features, and rendering behavior.
+# See: font.conf for detailed font settings
+config-file = font.conf
+
+# ----------------------------------------------------------------------------
+# Appearance & Theme
+# ----------------------------------------------------------------------------
+# Colors, themes, background, cursor, and visual styling.
+# See: appearance.conf for detailed appearance settings
+config-file = appearance.conf
+
+# ----------------------------------------------------------------------------
+# Key Bindings
+# ----------------------------------------------------------------------------
+# Keyboard shortcuts and custom key mappings.
+# See: keybinds.conf for detailed keybinding settings
+config-file = keybinds.conf
+
+# ----------------------------------------------------------------------------
+# macOS-Specific Settings
+# ----------------------------------------------------------------------------
+# Platform-specific configurations for macOS.
+# See: macos.conf for macOS-specific settings
+config-file = macos.conf
+
+# ----------------------------------------------------------------------------
+# Shell Integration
+# ----------------------------------------------------------------------------
+# Enable automatic shell integration for enhanced terminal features.
+# Values: none, detect, bash, elvish, fish, zsh
+# Default: detect
+#
+# Shell integration provides:
+# - Working directory reporting (OSC 7)
+# - Prompt marking (OSC 133)
+# - Command tracking and rerun capabilities
+shell-integration = detect
+
+# Configurable shell integration features (comma-separated).
+# Available features: cursor, sudo, title, ssh-env, ssh-terminfo
+# Prefix with 'no-' to disable (e.g., no-sudo)
+# Default: all features enabled
+# shell-integration-features = cursor,sudo,title
+
+# ----------------------------------------------------------------------------
+# Shell Command
+# ----------------------------------------------------------------------------
+# Specifies the shell or command to execute when terminal starts.
+# Format: direct:/path/to/command (no shell expansion)
+#         shell:command (force shell processing)
+#         command (auto-detect)
+# Default: User's login shell
+# command =
+
+# Command to run only in the first terminal window.
+# Subsequent terminals will use the standard 'command' setting.
+# CLI equivalent: ghostty -e "command"
+# initial-command =
+
+# ----------------------------------------------------------------------------
+# Window Configuration
+# ----------------------------------------------------------------------------
+# Window size is measured in terminal grid cells (characters).
+# Minimum: 10 columns × 4 rows
+# Note: Window manager may override these settings
+window-width = 200
+window-height = 55
+
+# Window padding in points (DPI-scaled pixels).
+# Format: single value (all sides) or x,y pairs
+# Default: 2 points on all sides
+# window-padding-x = 2
+# window-padding-y = 2
+
+# Window decoration style.
+# Values: none (no decorations), auto (system default),
+#         client (app-drawn), server (OS-drawn)
+# Default: auto
+# window-decoration = auto
+
+# Start window in maximized or fullscreen mode.
+# Default: false (both)
+# maximize = false
+# fullscreen = false
+
+# ----------------------------------------------------------------------------
+# Scrollback
+# ----------------------------------------------------------------------------
+# Memory limit for scrollback buffer per terminal (includes active screen).
+# Format: number with optional suffix (KB, MB, GB)
+# Default: 10MB
+# Note: No unlimited option available yet
+# scrollback-limit = 10MB
+
+# ----------------------------------------------------------------------------
+# Links & URL Handling
+# ----------------------------------------------------------------------------
+# Enable clickable URL detection (Ctrl/Cmd+hover to click).
+# Default: true
+# link = true
+
+# Custom URL regex pattern for link detection.
+# Empty value disables custom patterns.
+# link-url =
+
+# Enable link previews on hover.
+# Values: true (all links), false (disabled), osc8 (only OSC 8 links)
+# Default: true
+# link-previews = true
+
+# ----------------------------------------------------------------------------
+# Performance & Resource Limits
+# ----------------------------------------------------------------------------
+# Image storage limit per screen (for image protocols like Kitty, Sixel).
+# Format: bytes with optional suffix (MB, GB)
+# Default: 320MB, Max: 4GB
+# Set to 0 to disable image protocols entirely
+# image-storage-limit = 320MB
+
+# ----------------------------------------------------------------------------
+# Environment Variables (v1.2.0+)
+# ----------------------------------------------------------------------------
+# Set environment variables for terminal sessions.
+# Format: KEY=VALUE
+# Empty value removes the variable from environment
+# Example:
+# env = EDITOR=nvim
+# env = CUSTOM_VAR=value
