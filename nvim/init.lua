@@ -14,5 +14,6 @@ require("config.lazy").load({
 })
 
 require("config.options")
+require("config.autocmds")
 
 vim.cmd([[colorscheme kanagawa-dragon]])

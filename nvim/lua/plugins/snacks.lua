@@ -96,7 +96,7 @@ return {
       -- Other
       { "<leader>.",       function() Snacks.scratch() end,                     desc = "Toggle Scratch Buffer" },
       { "<leader>S",       function() Snacks.scratch.select() end,              desc = "Select Scratch Buffer" },
-      { "<leader>n",       function() Snacks.notifier.show_history() end,       desc = "Notification History" },
+      { "<leader>N",       function() Snacks.notifier.show_history() end,       desc = "Notification History" },
       { "<leader>bd",      function() Snacks.bufdelete() end,                   desc = "Delete Buffer" },
       { "<leader>un",      function() Snacks.notifier.hide() end,               desc = "Dismiss All Notifications" },
       { "<c-/>",           function() Snacks.terminal() end,                    desc = "Toggle Terminal" },
@@ -132,7 +132,7 @@ return {
           end
 
           -- Override print to use snacks for `:=` command
-          if vim.fn.has("nvim1.11") == 1 then
+          if vim.fn.has("nvim0.11") == 1 then
             vim._print = function(_, ...)
               dd(...)
             end
