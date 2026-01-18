@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+pcall(vim.api.nvim_del_augroup_by_name, "lazyvim_wrap_spell")
 
 vim.filetype.add({
   extension = {
