@@ -21,6 +21,17 @@ return {
     }
   },
   {
+    "MeanderingProgrammer/render-markdown.nvim",
+    lazy = true,
+    version = "*",
+    keys = {
+      { "<leader>mr", ":RenderMarkdown toggle<CR>", desc = "Markdown Render" },
+    },
+    config = function(_, opts)
+      require("render-markdown").setup({})
+    end,
+  },
+  {
     "nvim-mini/mini.comment",
     version = "*",
     event = "VeryLazy",
