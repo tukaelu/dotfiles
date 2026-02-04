@@ -29,6 +29,8 @@ return {
         sources = {
           explorer = {
             diagnostics = true,
+            hidden = true,
+            ignored = true,
             layout = {
               layout = {
                 position = "right",
