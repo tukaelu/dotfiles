@@ -77,8 +77,8 @@ shell-integration = detect
 # Window size is measured in terminal grid cells (characters).
 # Minimum: 10 columns × 4 rows
 # Note: Window manager may override these settings
-window-width = 200
-window-height = 55
+window-width = 240
+window-height = 65
 
 # Window padding in points (DPI-scaled pixels).
 # Format: single value (all sides) or x,y pairs
