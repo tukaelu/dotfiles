@@ -29,33 +29,6 @@ export TERM=xterm-256color
 export EDITOR=nvim
 export GPG_TTY=$(tty)
 
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
-
-export GOENV_ROOT="$HOME/.anyenv/envs/goenv"
-export PATH=$GOENV_ROOT/bin:$PATH
-
-# fzf
-export FZF_DEFAULT_OPTS='
---reverse
---extended
---ansi
---multi
---border
---bind=ctrl-u:page-up
---bind=ctrl-d:page-down
---bind=ctrl-z:toggle-all'
-
-WORDCHARS=${WORDCHARS//[\/]}
-SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
-ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-# aliases
-alias vi=`which nvim`
-alias k=kubectl
-
 # set options
 setopt clobber                # Permit overwrite by redirection(> & >>) (Use >! and >>! to bypass.)
 setopt correct                # Check spell command
@@ -121,3 +94,27 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey "^S" fzf-file-widget
 bindkey '^T' transpose-chars
 bindkey '^]' ghq-fzf
+
+# fzf
+export FZF_DEFAULT_OPTS='
+--reverse
+--extended
+--ansi
+--multi
+--border
+--bind=ctrl-u:page-up
+--bind=ctrl-d:page-down
+--bind=ctrl-z:toggle-all'
+
+WORDCHARS=${WORDCHARS//[\/]}
+SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# aliases
+alias vi=`which nvim`
+alias k=kubectl
+
+# mise
+eval "$(mise activate zsh)"
+
